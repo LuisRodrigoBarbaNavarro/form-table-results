@@ -65,3 +65,24 @@
    var url = window.location.href;
    ```
 ---
+6. El funcionamiento de `script-results` se basa en tres principales partes: la primera está encargada de mostrar los datos del almacenamiento local en la tabla, la segunda tiene como finalidad eliminar todos los datos del almacenamiento local, y la tercera se encarga de eliminar un dato específico de una fila del almacenamiento local.
+
+   ```javascript
+   const tablaResultados = document.getElementById("tablaResultados");
+   const envios = JSON.parse(localStorage.getItem("envios")) || [];
+   envios.forEach((envio) => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+        <td>${envio.id}</td>
+        <td>${envio.nombre}</td>
+        <td>${envio.apellidos}</td>
+        <td>${envio.telefono}</td>
+        <td>${envio.correo}</td>
+        <td>${envio.edad}</td>
+        <td>${envio.fechaNacimiento}</td>
+        <td><button type="button" class="btn btn-danger btn-eliminar">Eliminar</button></td>
+   `;
+     tablaResultados.appendChild(fila);
+   });
+  ```
+En el código anterior, se emplea exclusivamente para presentar los datos en la tabla de la página de resultados. Inicialmente, se obtiene una referencia al elemento HTML de la tabla identificado por el ID "tablaResultados". Posteriormente, se recopilan y transforman los datos almacenados en el almacenamiento local bajo la clave "envios" en un arreglo de objetos. Finalmente, se itera a través de estos objetos y se generan filas de tabla HTML que contienen sus respectivas propiedades, las cuales se añaden a la tabla "tablaResultados".
