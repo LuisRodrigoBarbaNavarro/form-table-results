@@ -67,6 +67,7 @@
 ---
 6. El funcionamiento de `script-results` se basa en tres principales partes: la primera está encargada de mostrar los datos del almacenamiento local en la tabla, la segunda tiene como finalidad eliminar todos los datos del almacenamiento local, y la tercera se encarga de eliminar un dato específico de una fila del almacenamiento local.
 
+
    ```javascript
    const tablaResultados = document.getElementById("tablaResultados");
    const envios = JSON.parse(localStorage.getItem("envios")) || [];
@@ -84,6 +85,52 @@
    `;
      tablaResultados.appendChild(fila);
    });
- ```
+   ```
 
-En el código anterior, se emplea exclusivamente para presentar los datos en la tabla de la página de resultados. Inicialmente, se obtiene una referencia al elemento HTML de la tabla identificado por el ID "tablaResultados". Posteriormente, se recopilan y transforman los datos almacenados en el almacenamiento local bajo la clave "envios" en un arreglo de objetos. Finalmente, se itera a través de estos objetos y se generan filas de tabla HTML que contienen sus respectivas propiedades, las cuales se añaden a la tabla "tablaResultados".
+
+   En el bloque de código anterior, se emplea exclusivamente para presentar los datos en la tabla de la página de resultados. Inicialmente, se obtiene una referencia al elemento HTML de la tabla identificado 
+   por el ID "tablaResultados". Posteriormente, se recopilan y transforman los datos almacenados en el almacenamiento local bajo la clave "envios" en un arreglo de objetos. Finalmente, se itera a través de 
+   estos objetos y se generan filas de tabla HTML que contienen sus respectivas propiedades, las cuales se añaden a la tabla "tablaResultados".
+
+
+   ```javascript
+   const btnEliminarCompleto = document.querySelector('#btn-eliminar');
+    btnEliminarCompleto.addEventListener('click', () => {
+        localStorage.clear();
+        const tabla = document.querySelector('.table-custom');
+        const filas = tabla.querySelectorAll('tbody tr');
+        filas.forEach(fila => fila.remove());
+    });
+   ```
+
+
+   Este segundo bloque de código, se encarga de eliminar completamente los datos almacenados en el almacenamiento local y todas las filas de una tabla en la página web cuando se hace clic en un botón. Primero, 
+   se obtiene una referencia al botón con el ID "btn-eliminar" y se añade un evento de escucha para cuando se haga clic en él. Cuando se activa este evento, se borran todos los datos en el almacenamiento local 
+   utilizando `localStorage.clear()`, se localiza la tabla en la página por su clase "table-custom", se seleccionan todas las filas dentro de su cuerpo y se eliminan una por una, vaciando así la tabla y  
+   borrando todos los datos almacenados de manera visual y en el almacenamiento local.
+
+
+   ```javascript
+   const btnEliminarFila = document.querySelectorAll('.btn-eliminar');
+    btnEliminarFila.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const fila = btn.closest('tr');
+            const indice = fila.rowIndex - 1;
+
+            const envios = JSON.parse(localStorage.getItem('envios')) || [];
+
+            envios.splice(indice, 1);
+            localStorage.setItem('envios', JSON.stringify(envios));
+
+            fila.remove();
+        });
+    });
+   ```
+
+
+   Este último bloque de código permite la eliminación de filas de una tabla en la página web cuando se hace clic en un botón "eliminar" asociado a cada fila. Para cada botón de eliminación, se agrega un 
+   evento de clic que identifica la fila correspondiente, calcula su índice en la tabla, elimina el objeto relacionado en los datos almacenados en el almacenamiento local, actualiza el almacenamiento local con 
+   los nuevos datos y, finalmente, elimina visualmente la fila de la tabla en la página web.
+
+   
+   
