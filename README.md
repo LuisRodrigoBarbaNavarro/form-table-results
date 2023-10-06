@@ -60,6 +60,7 @@
    ```
 ---
 5. `window.location.href` es una propiedad que se utiliza para obtener o cambiar la URL completa de la página actual en un navegador web:
+
    ```javascript
    var url = window.location.href;
    ```
