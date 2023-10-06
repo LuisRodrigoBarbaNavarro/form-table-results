@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Envíos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-3.css">
+</head>
+
+<body class="body-custom">
+    <div class="container">
+        <h1 class="mt-5 mb-4 text-center">Resultados de Envíos</h1>
+        <div class="table-responsive">
+            <table class="table table-custom table-dark table-bordered table-striped text-center">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Teléfono</th>
+                        <th>Correo Electrónico</th>
+                        <th>Edad</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaResultados">
+                    <!-- Aquí se agregarán las filas de la tabla con los resultados -->
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <a class="btn btn-primary mt-3" onclick="history.back()" role="button">Regresar</a>
+            <button type="button" class="btn btn-danger mt-3" id="btn-eliminar">Eliminar Contenido Completo</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="script/script-results.js"></script>
+</body>
+
+</html>

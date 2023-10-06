@@ -1,0 +1,34 @@
+/* Libraries */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
+
+/* End - Libraries */
+
+/* Basic */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* End - Basic */
+
+/* Body */
+.body-custom {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    background-color: #264d50;
+    color: white;
+}
+
+table.table-custom {
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* End - Body */
+
