@@ -84,5 +84,6 @@
    `;
      tablaResultados.appendChild(fila);
    });
-  ```
+ ```
+
 En el código anterior, se emplea exclusivamente para presentar los datos en la tabla de la página de resultados. Inicialmente, se obtiene una referencia al elemento HTML de la tabla identificado por el ID "tablaResultados". Posteriormente, se recopilan y transforman los datos almacenados en el almacenamiento local bajo la clave "envios" en un arreglo de objetos. Finalmente, se itera a través de estos objetos y se generan filas de tabla HTML que contienen sus respectivas propiedades, las cuales se añaden a la tabla "tablaResultados".
