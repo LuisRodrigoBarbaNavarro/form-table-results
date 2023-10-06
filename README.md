@@ -132,5 +132,10 @@
    evento de clic que identifica la fila correspondiente, calcula su índice en la tabla, elimina el objeto relacionado en los datos almacenados en el almacenamiento local, actualiza el almacenamiento local con 
    los nuevos datos y, finalmente, elimina visualmente la fila de la tabla en la página web.
 
-   
+---
+
+### Recursos ✨
+
+![](https://i.imgur.com/feutccN.png)
+![](https://i.imgur.com/gCO4AnG.png)
    
