@@ -14,7 +14,7 @@
 
 ### Preguntas
 1. Los arreglos en JavaScript son estructuras de datos que permiten almacenar múltiples valores en una sola variable. Los elementos de un arreglo se indexan numéricamente, comenzando desde 0, y pueden contener cualquier tipo de datos, incluyendo números, cadenas, objetos u otros arreglos.
-
+---
 2. El almacenamiento del navegador en JavaScript consta de dos tipos principales: **sessionStorage** y **localStorage**. Ambos permiten a las aplicaciones web almacenar datos en el lado del cliente. Las ventajas y desventajas son las siguientes:
 
    - `sessionStorage`:
@@ -44,9 +44,9 @@
      localStorage.removeItem("clave");
      sessionStorage.removeItem("clave");
      ```
-
+---
 3. JSON (JavaScript Object Notation) es un formato de intercambio de datos ligero y legible por humanos. Se utiliza comúnmente para representar objetos y estructuras de datos en JavaScript y en muchas otras tecnologías. Es un formato de texto que consiste en pares de clave-valor y se utiliza para transmitir datos entre un servidor y un cliente, o para almacenar configuraciones y estructuras de datos.
-
+---
 4. `JSON.parse()` se utiliza para convertir una cadena JSON en un objeto JavaScript:
    ```javascript
    var stringJSON = '{"nombre": "Rodrigo", "edad": 21}';
@@ -58,8 +58,9 @@
    var object = { nombre: "Rodrigo", edad: 21 };
    var stringJSON = JSON.stringify(object);
    ```
-
+---
 5. `window.location.href` es una propiedad que se utiliza para obtener o cambiar la URL completa de la página actual en un navegador web:
    ```javascript
    var url = window.location.href;
    ```
+---
